@@ -4,16 +4,8 @@ import { BaseEntity, ObjectIdColumn } from 'typeorm';
 
 export type UserDocument = User & Document;
 
-
-
-
-
-
-//user externalUrl Schema
-
-
 @Schema({
-  timestamps: true
+  timestamps: true,
 })
 export class User extends BaseEntity {
   @ObjectIdColumn({ primary: true })
@@ -30,16 +22,19 @@ export class User extends BaseEntity {
   @Prop({ select: false, required: false })
   password: string;
 
+  @Prop({ select: false, required: false })
+  phoneNumber: string;
+
+  @Prop({ select: false, required: false })
+  address: string;
+
+  @Prop({ select: false, required: false })
+  pinCode: string;
+
   @Prop({
     default: false
   })
   isDeleted: boolean
-
-
-
-
-
-
 
 }
 

@@ -20,6 +20,8 @@ export class UserService {
   }
 
   async login(user: any): Promise<User> {
+    console.log(user);
+    
     const newUser = new this.userModel(user);
     return newUser.save();
   }
